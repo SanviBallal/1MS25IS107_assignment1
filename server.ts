@@ -16,10 +16,8 @@ async function startServer() {
 
   app.use(express.json({ limit: '15mb' }));
 
-  // Resolved Gemini API key: prioritize user-supplied key, fallback to env var
-  const resolvedApiKey =
-    process.env.GEMINI_API_KEY ||
-    'AQ.Ab8RN6Ji2U98_Q2TmJBAA2xwzTPsclWFDhfvrQQqtNj3qucx3A';
+  // Resolved Gemini API key strictly from environment variables
+  const resolvedApiKey = process.env.GEMINI_API_KEY;
 
   // Initialize shared Gemini SDK client
   const ai = new GoogleGenAI({
