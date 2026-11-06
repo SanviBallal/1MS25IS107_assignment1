@@ -1,0 +1,6 @@
+{
+  "name": "ScholarArchitect - CS Paper & Architecture Agent",
+  "description": "Advanced CS research agent that parses academic papers, extracts interactive system architecture flowcharts, and generates student resume project extensions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
