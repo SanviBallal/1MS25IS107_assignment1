@@ -29,9 +29,9 @@ async function startServer() {
     },
   });
 
-  // Candidate models: gemini-3.5-flash is currently verified active and fast for this key
-  const PRIMARY_MODEL = 'gemini-3.5-flash';
-  const FALLBACK_MODELS = ['gemini-3.5-flash', 'gemini-3.7-flash', 'gemini-3.8-flash'];
+  // Candidate models: gemini-2.5-flash is the recommended default
+  const PRIMARY_MODEL = 'gemini-2.5-flash';
+  const FALLBACK_MODELS = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-3.8-flash'];
 
   // Helper to extract arXiv ID from URL or string
   function extractArxivId(input: string): string | null {
@@ -702,7 +702,7 @@ Output a JSON object with:
     app.use(vite.middlewares);
   }
 
-  app.listen(port, () => {
+  app.listen(Number(port), '0.0.0.0', () => {
     console.log(`ScholarArchitect Server listening on port ${port} with model ${PRIMARY_MODEL}`);
   });
 }
